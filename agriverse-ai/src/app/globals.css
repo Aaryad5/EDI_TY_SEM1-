@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #f8f9f4;
+  --foreground: #172b1f;
+  /* AgriVerse brand palette */
+  --forest: #1b4332;
+  --agri: #2d6a4f;
+  --fresh: #52b788;
+  --lightgreen: #95d5b2;
+  --earth: #8b5e3c;
+  --cream: #f8f9f4;
+  --dark: #172b1f;
+}
+
+@theme {
+  --color-forest: #1b4332;
+  --color-agri: #2d6a4f;
+  --color-fresh: #52b788;
+  --color-lightgreen: #95d5b2;
+  --color-earth: #8b5e3c;
+  --color-cream: #f8f9f4;
+  --color-dark: #172b1f;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c8d8cf;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #95d5b2;
+}
+
+/* ---------- Utilities ---------- */
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-dark {
+  background: rgba(27, 67, 50, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.gradient-hero {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(82, 183, 136, 0.35), transparent 60%),
+    radial-gradient(900px 500px at 10% 110%, rgba(139, 94, 60, 0.18), transparent 55%),
+    linear-gradient(160deg, #f8f9f4 0%, #eaf3ec 50%, #f4f1e8 100%);
+}
+
+.gradient-brand {
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 55%, #52b788 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #1b4332 0%, #52b788 60%, #8b5e3c 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -18px rgba(27, 67, 50, 0.35);
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  font-family: inherit;
+  border-radius: 0.75rem;
+  z-index: 0;
+}
+
+/* Fade-in helper */
+.animate-fade-up {
+  animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-floaty {
+  animation: floaty 5s ease-in-out infinite;
+}

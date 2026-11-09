@@ -1,0 +1,10 @@
+{
+  "name": "edi-sem-2-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix agriverse-ai run dev",
+    "build": "npm --prefix agriverse-ai run build",
+    "start": "npm --prefix agriverse-ai run start",
+    "lint": "npm --prefix agriverse-ai run lint"
+  }
+}

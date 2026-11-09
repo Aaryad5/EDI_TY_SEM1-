@@ -1,0 +1,29 @@
+agriverse-ai/node_modules/
+agriverse-ai/.next/
+agriverse-ai/.env
+agriverse-ai/.env.*
+!agriverse-ai/.env.example
+
+# Large datasets - keep locally, do not upload
+/agriverse_terrain_pune.csv
+/agriverse_landcover_pune - Copy.csv
+/agriverse_sentinel_pune.csv
+
+# Large GIS datasets
+/agriverse_landcover_pune.csv
+/agriverse_landcover_pune - Copy.csv
+/agriverse_sentinel_pune.csv
+/agriverse_terrain_pune.csv
+
+
+# Mapbox secrets
+/agriverse-map/.env
+/agriverse-map/.env.*
+/agriverse-ai/.env
+/agriverse-ai/.env.*
+/agriverse-ai/.env.local
+
+# All environment files
+**/.env
+**/.env.*
+!**/.env.example
